@@ -1,0 +1,18 @@
+# PlatformIO / ESP-IDF build output
+.pio/
+.pio
+build/
+sdkconfig.old
+dependencies.lock
+
+# IDF sdkconfig is generated from the defaults layers
+firmware-airplay2/sdkconfig
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
