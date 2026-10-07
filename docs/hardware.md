@@ -12,15 +12,32 @@
 
 ## Signal path
 
-```
-ESP32                PCM5102               TPA3118
-─────                ───────               ───────
-GPIO (BCLK) ────────► BCK
-GPIO (LRCLK)────────► LCK (WS)
-GPIO (DATA) ────────► DIN
-GND ────────────────► GND ────────────────► GND (signal ground)
-                     LOUT ───────────────► IN  (+)
-                     GND  ───────────────► IN  (–)
+```mermaid
+flowchart LR
+    subgraph ESP32
+        BCLK["GPIO26 (BCLK)"]
+        WS["GPIO25 (LRCLK/WS)"]
+        DO["GPIO22 (DATA)"]
+        G1["GND"]
+    end
+    subgraph PCM5102["PCM5102 DAC"]
+        BCK["BCK"]
+        LCK["LCK (WS)"]
+        DIN["DIN"]
+        GND1["GND"]
+        LOUT["LOUT"]
+    end
+    subgraph TPA3118["TPA3118 amp"]
+        INP["IN (+)"]
+        INN["IN (–)"]
+        GND2["GND"]
+    end
+    BCLK --> BCK
+    WS --> LCK
+    DO --> DIN
+    G1 --> GND1 --> GND2
+    LOUT --> INP
+    GND1 --> INN
 ```
 
 ### PCM5102 module settings (solder jumpers on the back)

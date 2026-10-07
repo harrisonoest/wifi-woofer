@@ -1,4 +1,4 @@
-# esp32-speaker
+# wifi-woofer
 
 An internet-connected, WiFi speaker built on an ESP32. Appears natively as an
 **AirPlay 2** speaker on iPhone/iPad/Mac, with multi-room sync, Bluetooth A2DP
@@ -8,7 +8,8 @@ input, and a built-in web config UI.
 
 Instead of building an AirPlay 1 (RAOP) receiver from scratch, this project uses
 **[airplay-esp32](https://github.com/rbouteiller/airplay-esp32)** (forked/cloned
-at `firmware-airplay2/`, pinned by commit) as the firmware base:
+at `firmware-airplay2/`, pinned by commit) as the firmware base. On the network
+the speaker advertises as **"Wifi Woofer"**.
 
 - True AirPlay 2 (Control Center, multi-room PTP sync, ALAC + AAC)
 - Built on Shairport Sync / openairplay airplay2-receiver lineage

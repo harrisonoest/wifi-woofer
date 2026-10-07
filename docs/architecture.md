@@ -9,15 +9,20 @@
 
 ## Overview
 
-```
-iPhone / iPad / Mac ──AirPlay 2──┐
-Bluetooth phones    ──A2DP──────┤
-                                 ▼
-Home Assistant ────────────┌───────────────────────┐
-Apple Home (HAP in         │ ESP32: airplay-esp32  │
-firmware, or Homebridge)   │ RTSP/FairPlay/HAP     │──I2S──► PCM5102 ──analog──► TPA3118 ──► speaker
-                           │ mDNS + PTP + web UI   │
-                           └───────────────────────┘
+```mermaid
+flowchart LR
+    phone["iPhone / iPad / Mac"] -- "AirPlay 2" --> esp
+    bt["Bluetooth phones"] -- "A2DP" --> esp
+    ha["Home Assistant"] --> esp
+    apple["Apple Home<br/>(HAP in firmware,<br/>or Homebridge)"] --> esp
+
+    subgraph esp["ESP32: airplay-esp32 (wifi-woofer)"]
+        stack["RTSP / FairPlay / HAP<br/>mDNS + PTP + web UI"]
+    end
+
+    esp -- I2S --> dac["PCM5102 DAC"]
+    dac -- analog --> amp["TPA3118 amp"]
+    amp --> spk["Speaker"]
 ```
 
 ## Firmware stack

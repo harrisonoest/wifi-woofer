@@ -14,6 +14,8 @@ the upstream license (non-commercial use only — see
 - `config/sdkconfig.user.elegoo-wroom` — added: our board layer
   (ELEGOO ESP-WROOM-32, no PSRAM, 4 MB flash, I2S pins 26/25/22, mute GPIO 21)
 - `user_platformio.ini` — added: the `elegoo-wroom` build environment
+- `main/settings.h` — default device name changed to `"Wifi Woofer"`
+  (upstream: `"ESP32 AirPlay"`); still runtime-renameable via the web UI
 - `data/bg/` — removed: ST7789 display background, unused (no display) and
   too large for the 4 MB SPIFFS partition
 - `components/u8g2/` — pruned to what the IDF build uses (`csrc/` + build
