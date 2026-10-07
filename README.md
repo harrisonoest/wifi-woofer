@@ -30,8 +30,10 @@ the speaker advertises as **"Wifi Woofer"**.
 
 Signal path: `ESP32 → I2S → PCM5102 → analog → TPA3118 → speaker`
 
-See [docs/hardware.md](docs/hardware.md) for wiring (still accurate) and
-[docs/architecture.md](docs/architecture.md) for the design rationale.
+- **New here? Follow the [step-by-step tutorial](docs/tutorial.md)** — parts
+  list, wiring, flashing, and setup from scratch.
+- [docs/hardware.md](docs/hardware.md) — wiring reference and schematic
+- [docs/architecture.md](docs/architecture.md) — design rationale
 
 ## Build & flash
 
