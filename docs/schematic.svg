@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" font-family="Helvetica, Arial, sans-serif">
+  <title>wifi-woofer wiring schematic</title>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="600" y="42" font-size="24" font-weight="bold" fill="#111111" text-anchor="middle">wifi-woofer wiring schematic</text>
+
+  <!-- ===================== BOARDS ===================== -->
+
+  <!-- ESP32 -->
+  <rect x="60" y="170" width="230" height="310" rx="10" fill="#f4f6fa" stroke="#2c3e50" stroke-width="2"/>
+  <text x="175" y="196" font-size="18" font-weight="bold" fill="#2c3e50" text-anchor="middle">ELEGOO ESP32</text>
+  <text x="175" y="468" font-size="13" fill="#2c3e50" text-anchor="middle">ESP-WROOM-32 dev board</text>
+  <!-- pin stubs (right edge x=290) -->
+  <g font-size="14" fill="#111111">
+    <rect x="290" y="203" width="16" height="8" fill="#2c3e50"/>
+    <text x="284" y="210" text-anchor="end">GPIO26</text>
+    <rect x="290" y="243" width="16" height="8" fill="#2c3e50"/>
+    <text x="284" y="250" text-anchor="end">GPIO25</text>
+    <rect x="290" y="283" width="16" height="8" fill="#2c3e50"/>
+    <text x="284" y="290" text-anchor="end">GPIO22</text>
+    <rect x="290" y="323" width="16" height="8" fill="#2c3e50"/>
+    <text x="284" y="330" text-anchor="end">GPIO21</text>
+    <rect x="290" y="373" width="16" height="8" fill="#c0392b"/>
+    <text x="284" y="380" text-anchor="end">5V</text>
+    <rect x="290" y="413" width="16" height="8" fill="#111111"/>
+    <text x="284" y="420" text-anchor="end">GND</text>
+  </g>
+
+  <!-- PCM5102 -->
+  <rect x="470" y="150" width="230" height="290" rx="10" fill="#f7f2fa" stroke="#6c3483" stroke-width="2"/>
+  <text x="585" y="176" font-size="18" font-weight="bold" fill="#6c3483" text-anchor="middle">PCM5102 DAC</text>
+  <text x="585" y="195" font-size="13" fill="#6c3483" text-anchor="middle">GY-PCM5102 I2S module</text>
+  <!-- left pin stubs (x=470) -->
+  <g font-size="14" fill="#111111">
+    <rect x="454" y="196" width="16" height="8" fill="#2c3e50"/>
+    <text x="478" y="210">BCK</text>
+    <rect x="454" y="236" width="16" height="8" fill="#2c3e50"/>
+    <text x="478" y="250">LCK (WS)</text>
+    <rect x="454" y="276" width="16" height="8" fill="#2c3e50"/>
+    <text x="478" y="290">DIN</text>
+    <rect x="454" y="316" width="16" height="8" fill="#2c3e50"/>
+    <text x="478" y="330">XSMT</text>
+  </g>
+  <!-- right pin stubs (x=700) -->
+  <g font-size="14" fill="#111111">
+    <rect x="700" y="196" width="16" height="8" fill="#a93226"/>
+    <text x="694" y="210" text-anchor="end">LOUT</text>
+    <rect x="700" y="413" width="16" height="8" fill="#111111"/>
+    <text x="694" y="420" text-anchor="end">GND</text>
+  </g>
+  <!-- bottom VIN stub -->
+  <rect x="581" y="440" width="8" height="16" fill="#c0392b"/>
+  <text x="598" y="454" font-size="14" fill="#111111">VIN</text>
+  <!-- jumper note -->
+  <text x="585" y="132" font-size="12" fill="#6c3483" text-anchor="middle">jumpers: FLT/DEMP/FMT/SCK/H1L/H1R = L, XSMT = H (or GPIO21)</text>
+
+  <!-- TPA3118 -->
+  <rect x="810" y="150" width="210" height="290" rx="10" fill="#fdf6ec" stroke="#b9770e" stroke-width="2"/>
+  <text x="915" y="176" font-size="18" font-weight="bold" fill="#b9770e" text-anchor="middle">TPA3118 amp</text>
+  <text x="915" y="195" font-size="13" fill="#b9770e" text-anchor="middle">mono class-D, 12&#8211;24 V</text>
+  <!-- left pin stubs (x=810) -->
+  <g font-size="14" fill="#111111">
+    <rect x="794" y="196" width="16" height="8" fill="#a93226"/>
+    <text x="818" y="210">IN (+)</text>
+    <rect x="794" y="236" width="16" height="8" fill="#111111"/>
+    <text x="818" y="250">IN (&#8211;)</text>
+    <rect x="794" y="413" width="16" height="8" fill="#111111"/>
+    <text x="818" y="420">GND</text>
+  </g>
+  <!-- right pin stubs (x=1020) -->
+  <g font-size="14" fill="#111111">
+    <rect x="1020" y="246" width="16" height="8" fill="#a93226"/>
+    <text x="1014" y="260" text-anchor="end">OUT +</text>
+    <rect x="1020" y="316" width="16" height="8" fill="#111111"/>
+    <text x="1014" y="330" text-anchor="end">OUT &#8211;</text>
+  </g>
+
+  <!-- Speaker -->
+  <rect x="1078" y="220" width="100" height="130" rx="8" fill="#f0f0f0" stroke="#555555" stroke-width="2"/>
+  <path d="M 1103 255 v 60 l 14 -12 h 16 l 22 22 v -80 l -22 22 h -16 z" fill="#555555"/>
+  <text x="1128" y="340" font-size="14" font-weight="bold" fill="#333333" text-anchor="middle">Speaker</text>
+
+  <!-- Power supplies -->
+  <rect x="110" y="610" width="180" height="80" rx="8" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
+  <text x="200" y="642" font-size="15" font-weight="bold" fill="#d35400" text-anchor="middle">12 V supply</text>
+  <text x="200" y="662" font-size="12" fill="#d35400" text-anchor="middle">&#8805;2 A, single PSU</text>
+
+  <rect x="330" y="610" width="220" height="80" rx="8" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="440" y="636" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Buck 12 V &#8594; 5.0 V</text>
+  <text x="440" y="656" font-size="12" fill="#c0392b" text-anchor="middle">(MP1584/LM2596)</text>
+  <text x="440" y="678" font-size="11" fill="#c0392b" text-anchor="middle">set buck to 5.0 V before connecting</text>
+
+  <!-- ===================== WIRES ===================== -->
+
+  <!-- I2S: GPIO26 -> BCK (blue) -->
+  <polyline points="306,207 470,200" fill="none" stroke="#1f6feb" stroke-width="2.5"/>
+  <text x="388" y="193" font-size="13" font-weight="bold" fill="#1f6feb" text-anchor="middle">GPIO26 BCK</text>
+
+  <!-- I2S: GPIO25 -> LCK (orange) -->
+  <polyline points="306,247 470,240" fill="none" stroke="#e67e22" stroke-width="2.5"/>
+  <text x="388" y="233" font-size="13" font-weight="bold" fill="#e67e22" text-anchor="middle">GPIO25 LCK (WS)</text>
+
+  <!-- I2S: GPIO22 -> DIN (green) -->
+  <polyline points="306,287 470,280" fill="none" stroke="#1e8e3e" stroke-width="2.5"/>
+  <text x="388" y="273" font-size="13" font-weight="bold" fill="#1e8e3e" text-anchor="middle">GPIO22 DIN</text>
+
+  <!-- I2S: GPIO21 -> XSMT (purple) -->
+  <polyline points="306,327 470,320" fill="none" stroke="#8250df" stroke-width="2.5"/>
+  <text x="388" y="313" font-size="13" font-weight="bold" fill="#8250df" text-anchor="middle">GPIO21 XSMT</text>
+  <text x="388" y="343" font-size="11" fill="#8250df" text-anchor="middle">(firmware mute, active high)</text>
+
+  <!-- Analog: LOUT -> IN+ (magenta) -->
+  <polyline points="716,200 810,200" fill="none" stroke="#c2185b" stroke-width="2.5"/>
+  <text x="763" y="190" font-size="13" font-weight="bold" fill="#c2185b" text-anchor="middle">LOUT &#8594; IN+</text>
+  <text x="763" y="216" font-size="11" fill="#c2185b" text-anchor="middle">keep short / twisted</text>
+
+  <!-- Analog ground: PCM GND -> IN- (black) -->
+  <polyline points="716,417 760,417 760,240 794,240" fill="none" stroke="#111111" stroke-width="2.5"/>
+  <text x="752" y="335" font-size="12" font-weight="bold" fill="#111111" text-anchor="middle" transform="rotate(-90 752 335)">GND &#8594; IN&#8211;</text>
+
+  <!-- Star ground bus (black) -->
+  <polyline points="306,417 306,500" fill="none" stroke="#111111" stroke-width="3"/>
+  <polyline points="760,417 760,500" fill="none" stroke="#111111" stroke-width="3"/>
+  <polyline points="818,417 818,500" fill="none" stroke="#111111" stroke-width="3"/>
+  <polyline points="280,500 850,500" fill="none" stroke="#111111" stroke-width="3"/>
+  <circle cx="306" cy="500" r="4" fill="#111111"/>
+  <circle cx="760" cy="500" r="4" fill="#111111"/>
+  <circle cx="818" cy="500" r="4" fill="#111111"/>
+  <text x="560" y="492" font-size="12" font-weight="bold" fill="#111111" text-anchor="middle">common ground &#8212; star-ground at the 12 V supply terminal, keep amp return out of the DAC ground path</text>
+
+  <!-- 12 V main rail (dark orange) -->
+  <polyline points="200,610 200,575" fill="none" stroke="#d35400" stroke-width="3"/>
+  <polyline points="200,575 870,575" fill="none" stroke="#d35400" stroke-width="3"/>
+  <polyline points="400,575 400,610" fill="none" stroke="#d35400" stroke-width="3"/>
+  <polyline points="870,448 870,575" fill="none" stroke="#d35400" stroke-width="3"/>
+  <rect x="814" y="440" width="16" height="8" fill="#d35400"/>
+  <circle cx="200" cy="575" r="4" fill="#d35400"/>
+  <circle cx="400" cy="575" r="4" fill="#d35400"/>
+  <circle cx="870" cy="575" r="4" fill="#d35400"/>
+  <text x="892" y="472" font-size="12" font-weight="bold" fill="#d35400">VIN +12 V</text>
+  <text x="660" y="567" font-size="12" font-weight="bold" fill="#d35400" text-anchor="middle">+12 V main rail (TPA3118 VIN, buck input)</text>
+
+  <!-- 5V rail from buck output (red) -->
+  <polyline points="360,610 360,560" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <polyline points="195,560 585,560" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <polyline points="306,381 306,560" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <polyline points="585,456 585,560" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="306" cy="560" r="4" fill="#c0392b"/>
+  <circle cx="360" cy="560" r="4" fill="#c0392b"/>
+  <circle cx="585" cy="560" r="4" fill="#c0392b"/>
+  <text x="255" y="552" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="middle">+5 V rail (buck output)</text>
+
+  <!-- Speaker wires -->
+  <polyline points="1036,250 1078,268" fill="none" stroke="#c2185b" stroke-width="2.5"/>
+  <polyline points="1036,320 1078,302" fill="none" stroke="#111111" stroke-width="2.5"/>
+  <text x="1057" y="246" font-size="12" font-weight="bold" fill="#c2185b">+</text>
+  <text x="1057" y="316" font-size="12" font-weight="bold" fill="#111111">&#8211;</text>
+
+  <!-- ===================== LEGEND ===================== -->
+  <rect x="60" y="710" width="1080" height="70" rx="8" fill="#fafafa" stroke="#999999" stroke-width="1"/>
+  <text x="80" y="738" font-size="14" font-weight="bold" fill="#333333">Legend:</text>
+  <line x1="150" y1="733" x2="190" y2="733" stroke="#1f6feb" stroke-width="3"/>
+  <text x="196" y="738" font-size="13" fill="#111111">I2S BCK</text>
+  <line x1="280" y1="733" x2="320" y2="733" stroke="#e67e22" stroke-width="3"/>
+  <text x="326" y="738" font-size="13" fill="#111111">I2S LCK/WS</text>
+  <line x1="425" y1="733" x2="465" y2="733" stroke="#1e8e3e" stroke-width="3"/>
+  <text x="471" y="738" font-size="13" fill="#111111">I2S DIN</text>
+  <line x1="545" y1="733" x2="585" y2="733" stroke="#8250df" stroke-width="3"/>
+  <text x="591" y="738" font-size="13" fill="#111111">I2S XSMT (mute)</text>
+  <line x1="735" y1="733" x2="775" y2="733" stroke="#c2185b" stroke-width="3"/>
+  <text x="781" y="738" font-size="13" fill="#111111">Analog audio</text>
+  <line x1="890" y1="733" x2="930" y2="733" stroke="#c0392b" stroke-width="3"/>
+  <text x="936" y="738" font-size="13" fill="#111111">5 V rail (buck output)</text>
+  <line x1="160" y1="762" x2="200" y2="762" stroke="#d35400" stroke-width="3"/>
+  <text x="206" y="767" font-size="13" fill="#111111">12 V main rail</text>
+  <line x1="370" y1="762" x2="410" y2="762" stroke="#111111" stroke-width="3"/>
+  <text x="416" y="767" font-size="13" fill="#111111">Ground (common, star topology)</text>
+  <circle cx="620" cy="762" r="4" fill="#111111"/>
+  <text x="632" y="767" font-size="13" fill="#111111">junction (solder point)</text>
+  <text x="1130" y="767" font-size="13" font-style="italic" fill="#555555" text-anchor="end">wifi-woofer wiring schematic</text>
+</svg>

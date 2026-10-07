@@ -20,12 +20,13 @@ the speaker advertises as **"Wifi Woofer"**.
 
 ## Hardware
 
-| Part | Role |
-|---|---|
-| ELEGOO ESP32 dev board (ESP-WROOM-32, USB-C, 4 MB flash, no PSRAM) | WiFi + AirPlay 2 decode |
-| PCM5102 I2S DAC module | I2S → analog line-out |
-| TPA3118 mono amp board | Analog in → speaker (analog-input class-D) |
-| 5 V PSU (≥2 A) | ESP32 + DAC (TPA3118 may want its own 12–24 V supply) |
+| Part                                                               | Role                                                  |
+| ------------------------------------------------------------------ | ----------------------------------------------------- |
+| ELEGOO ESP32 dev board (ESP-WROOM-32, USB-C, 4 MB flash, no PSRAM) | WiFi + AirPlay 2 decode                               |
+| PCM5102 I2S DAC module                                             | I2S → analog line-out                                 |
+| TPA3118 mono amp board                                             | Analog in → speaker (analog-input class-D)            |
+| Single 12 V PSU (≥2 A)                                             | Powers everything: amp directly + buck to 5 V for logic |
+| MP1584/LM2596 buck module (set to 5.0 V)                           | 12 V → 5 V for ESP32 + PCM5102                         |
 
 Signal path: `ESP32 → I2S → PCM5102 → analog → TPA3118 → speaker`
 
